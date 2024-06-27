@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Perfil</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <a href="{% url 'index' %}"><img src="{% static 'img/logo2.png' %}" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#about">Nosotros</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#services">Servicios</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#team">Equipo</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#pricing">Promociones</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#contact">Contacto</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'profile' %}">Perfil</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'logout' %}">Cerrar Sesión</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- Fin Header -->
+
+  <main id="main" data-aos="fade-up">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <ol>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li>Perfil</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- Fin Breadcrumbs -->
+
+    <!-- Perfil Section -->
+    <section id="profile" class="profile">
+      <div class="container">
+        <div class="section-title">
+          <h2>Perfil del Usuario</h2>
+          <p>Bienvenido, {{ user.first_name }} {{ user.last_name }}</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <div class="profile-info">
+              <h3>Información Personal</h3>
+              <ul>
+                <li><strong>Nombre:</strong> {{ user.first_name }}</li>
+                <li><strong>Apellido:</strong> {{ user.last_name }}</li>
+                <li><strong>Email:</strong> {{ user.username }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- Fin Perfil Section -->
+
+  </main><!-- Fin #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <a href="#header" class="scrollto footer-logo"><img src="{% static 'img/trm.png' %}" alt=""></a>
+            <p>Y cualquiera que huya de ellos, nada son. Con un gran esfuerzo físico, elegir un vuelo suele ser lo más cómodo.</p>
+          </div>
+        </div>
+        <div class="row footer-newsletter justify-content-center">
+          <div class="col-lg-6">
+            <form action="" method="post">
+              <input type="email" name="email" placeholder="Ingresa tu email"><input type="submit" value="Suscribete">
+            </form>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>TRM</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- Fin Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+</html>

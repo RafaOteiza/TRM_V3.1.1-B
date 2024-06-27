@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Alineacion y Balanceo </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Knight
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <a href="{% url 'index' %}"><img src="{% static 'img/logo2.png' %}" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#about">Nosotros</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#services">Servicios</a></li>
+          <li><a class="nav-link scrollto active" href="{% url 'index' %}#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#team">Equipo</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#pricing">Promociones</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#contact">Contacto</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'login' %}">Login</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main" data-aos="fade-up">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Alineacion y Balanceo</h2>
+          <ol>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li>Alineacion y Balanceo</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="{% static 'img/portfolio/portfolio-1.jpg' %}" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="{% static 'img/portfolio/portfolio-1_1.jpg' %}" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="{% static 'img/portfolio/portfolio-1_2.jpg' %}" alt="">
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+
+            <div class="portfolio-description">
+              <h2>Detalle de la Reparacion:</h2>
+              <p>
+                Bajo mi supervision, utilizamos equipos de última generación y técnicas precisas para asegurar que las ruedas de su vehículo 
+                estén alineadas correctamente y balanceadas adecuadamente, proporcionando una conducción suave y segura.
+                Se realizó un exhaustivo diagnóstico del sistema de alineación y balanceo para identificar cualquier desviación o problema en las ruedas.</p>
+            </div>
+            <div class="portfolio-info">
+              <h3>Materiales Utilizados</h3>
+              <ul>
+                <li><strong>1.-</strong> Pesos de balanceo de ruedas</li>
+                <li><strong>2.-</strong> Herramientas de medicion de alineacion</li>
+                <li><strong>3.-</strong> Tornillos y tuercas de rueda</li>
+                <li></li>
+                <li><strong>Mecanico:</strong> Ana Lopez</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Video Section ======= -->
+  <section class="video-section" style="text-align: center;">
+    <div class="container">
+      <h2>Proceso de Alineación y Balanceo</h2>
+      <p>Mira cómo realizamos la alineación y el balanceo de los vehículos en nuestro taller:</p>
+      <iframe width="100%" height="500" src="https://www.youtube.com/embed/7mVjO3eYU5w?si=QMUaSPEkijT4iZZh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+
+      <div class="container">
+
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <a href="#header" class="scrollto footer-logo"><img src="{% static 'img/trm.png' %}" alt=""></a>
+            <p>Y cualquiera que huya de ellos, nada son. Con un gran esfuerzo físico, elegir un vuelo suele ser lo más cómodo.</p>
+          </div>
+        </div>
+
+        <div class="row footer-newsletter justify-content-center">
+          <div class="col-lg-6">
+            <form action="" method="post">
+              <input type="email" name="email" placeholder="Ingresa tu email"><input type="submit" value="Suscribete">
+            </form>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>TRM</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+</html>

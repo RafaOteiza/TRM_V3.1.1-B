@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Taller Rayo Mackween - TRM</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/trm.png' %}" rel="icon">
+  <link href="{% static 'img/trm.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Knight
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <a href="{% url 'index' %}" class="hero-logo" data-aos="zoom-in"><img src="{% static 'img/trm.png' %}" alt=""></a>
+      <h1 data-aos="zoom-in">Taller Rayo Mackween</h1>
+      <h2 data-aos="fade-up">El mejor taller mecanico de santiago</h2>
+      <a data-aos="fade-up" data-aos-delay="200" href="#about" class="btn-get-started scrollto">Bienvenidos</a>
+    </div>
+  </section><!-- End Hero -->
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <a href="{% url 'index' %}"><img src="{% static 'img/logo2.png' %}" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">Nosotros</a></li>
+          <li><a class="nav-link scrollto" href="#services">Servicios</a></li>
+          <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="#team">Equipo</a></li>
+          <li><a class="nav-link scrollto" href="#pricing">Promociones</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
+          {% if user.is_authenticated %}
+          <li><a class="nav-link scrollto" href="{% url 'profile' %}">Perfil</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'logout' %}">Cerrar Sesión</a></li>
+          {% else %}
+          <li><a class="nav-link scrollto" href="{% url 'login' %}">Login</a></li>
+          {% endif %}
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- Fin Header -->
+
+  <main id="main">
+
+    <!-- ======= Seccion Nosotros ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Sobre Nosotros</h2>
+          <p>"El mantenimiento es fundamental para todo"</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="image">
+              <img src="{% static 'img/about2.png' %}" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
+              <h3></h3>
+              <p class="fst-italic">
+                Rayo Mackween es un taller mecánico dedicado a proporcionar servicios de alta calidad. Con una amplia experiencia en el sector, nuestro equipo de técnicos altamente 
+                capacitados y comprometidos se esfuerza por ofrecer soluciones confiables y eficientes para satisfacer las necesidades de nuestros clientes.
+              </p>
+              <ul>
+                <li><i class="bx bx-check-double"></i> Mision</li>
+               </ul>
+              <p>
+                Nuestra misión es proporcionar a nuestros clientes una experiencia excepcional en el cuidado y 
+                mantenimiento de sus vehículos. Nos comprometemos a ofrecer servicios de calidad superior, utilizando tecnología de vanguardia y 
+                un enfoque personalizado para garantizar la seguridad y el rendimiento óptimo de cada automóvil que entra en nuestro taller.
+              </p>
+              <ul>
+                <li><i class="bx bx-check-double"></i> Vision</li>
+               </ul>
+              <p>
+                Aspiramos a ser reconocidos como el taller mecánico líder en nuestra comunidad y más allá, destacando por nuestra excelencia en el servicio al cliente, 
+                nuestra dedicación a la innovación y nuestra integridad en cada interacción. Nos esforzamos por ser un referente en la industria automotriz.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- Fin Nosotros -->
+
+    <!-- ======= Secccion Servicios  ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Servicios</h2>
+          <p>Ofrecemos servicios de primer nivel para tu vehiculo</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 order-2 order-lg-1">
+            <div class="icon-box mt-5 mt-lg-0" data-aos="fade-up">
+              <i class="bx bx-receipt"></i>
+              <h4>Reparacion de Motor</h4>
+              <p>Restauramos el rendimiento óptimo de su motor con diagnósticos precisos y reparaciones meticulosas.</p>
+            </div>
+            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-cube-alt"></i>
+              <h4>Sistema de Frenos</h4>
+              <p>Garantizamos su seguridad con inspecciones exhaustivas y reparaciones precisas del sistema de frenos.</p>
+            </div>
+            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-images"></i>
+              <h4>Alineacion y Balanceo</h4>
+              <p>Ajustamos sus ruedas para un manejo suave y seguro en todo momento.</p>
+            </div>
+            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-shield"></i>
+              <h4>Mantenimiento Preventivo</h4>
+              <p>Mantenemos su vehículo en óptimas condiciones para prevenir problemas futuros.</p>
+            </div>
+          </div>
+          <div class="image col-lg-6 order-1 order-lg-2" style='background-image: url("{% static 'img/services.jpg' %}");' data-aos="fade-left" data-aos-delay="100"></div>
+        </div>
+
+      </div>
+    </section><!-- Fin Servicios -->
+
+    <!-- ======= Seccion Portafolio  ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Trabajos Realizados</h2>
+          <p>Conoce alguno de nuestros trabajos realizados por expertos</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12 d-flex justify-content-center">
+          </div>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="{% static 'img/portfolio/portfolio-1.jpg' %}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Alineacion y Balanceo</h4>
+                <div class="portfolio-links">
+                  <a href="{% url 'alineacion' %}" title="Mas Detalles"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="{% static 'img/portfolio/portfolio-2.jpg' %}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Reparacion de Motor</h4>
+                <div class="portfolio-links">
+                  <a href="{% url 'motor' %}" title="Mas Detalles"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="{% static 'img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Servicio de Frenos</h4>
+                <div class="portfolio-links">
+                  <a href="{% url 'frenos' %}" title="Mas Detalles"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section><!-- Fin Seccion Portafolio -->
+
+    <!-- ======= Seccion Testimonios ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container" data-aos="zoom-in">
+        <div class="quote-icon">
+          <i class="bx bxs-quote-right"></i>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  "¡Increíble servicio! Me salvaron cuando mi motor falló en medio del camino. Profesionales y confiables."
+                </p>
+                <img src="{% static 'img/testimonials/hombre.png' %}" class="testimonial-img" alt="">
+                <h3>Mario Fernández</h3>
+              </div>
+            </div><!-- Fin Item Testimonio -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  "Desde que confío el mantenimiento de mis frenos a ellos, me siento mucho más seguro en la carretera. ¡Altamente recomendados!"
+                </p>
+                <img src="{% static 'img/testimonials/mujer.png' %}" class="testimonial-img" alt="">
+                <h3>Claudia Ramírez</h3>
+              </div>
+            </div><!-- Fin Item Testimonio-->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  "Gracias a su alineación y balanceo, mi conducción es mucho más suave y confortable. ¡Excelente trabajo!"
+                </p>
+                <img src="{% static 'img/testimonials/hombre.png' %}" class="testimonial-img" alt="">
+                <h3>Esteban Molina</h3>
+              </div>
+            </div><!-- Fin Item Testimonio -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  "Siempre me dan una atención personalizada y me explican todo a detalle. Me siento en buenas manos con su mantenimiento preventivo."
+                </p>
+                <img src="{% static 'img/testimonials/mujer.png' %}" class="testimonial-img" alt="">
+                <h3>Lucía González</h3>
+              </div>
+            </div><!-- Fin Item Testimonio -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  "Me sorprendió la rapidez y eficacia con la que repararon mi motor. ¡Un servicio de calidad que vale la pena!"
+                </p>
+                <img src="{% static 'img/testimonials/hombre.png' %}" class="testimonial-img" alt="">
+                <h3>Jorge Martínez</h3>
+              </div>
+            </div><!-- Fin Item Testimonio -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- Fin Testimonios -->
+
+    <!-- ======= Inicio Seccion Clientes ======= -->
+    <section id="clients" class="clients">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in">
+            <img src="{% static 'img/clients/mazda.png' %}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="100">
+            <img src="{% static 'img/clients/pegout.png' %}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="200">
+            <img src="{% static 'img/clients/opel.png' %}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="300">
+            <img src="{% static 'img/clients/porsche.png' %}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="400">
+            <img src="{% static 'img/clients/subaru.png' %}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="500">
+            <img src="{% static 'img/clients/hyundai.png' %}" class="img-fluid" alt="">
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- Fin Seccion Clientes -->
+
+    <!-- ======= Seccion Team/Equipo  ======= -->
+    <section id="team" class="team">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Equipo</h2>
+          <p>"Juntos, somos más que la suma de nuestras partes: ¡el motor que impulsa el éxito!"</p>
+        </div>
+        <div class="row">
+          <!-- Miembro 1: Hasbulla -->
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="zoom-in">
+              <div class="member-img">
+                <img src="{% static 'img/team/team-1.jpg' %}" class="img-fluid" alt="Ana López">
+                <div class="social">
+                  <a href="https://twitter.com/hasbulla" target="_blank"><i class="bi bi-twitter"></i></a>
+                  <a href="https://facebook.com/hasbulla" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://instagram.com/hasbulla" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://linkedin.com/in/hasbulla" target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Hasbulla</h4>
+                <span>Director Ejecutivo</span>
+                <p>Experta en mecánica y liderazgo con más de 10 años de experiencia en el sector automotriz.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Miembro 2: José Ramírez -->
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="zoom-in" data-aos-delay="100">
+              <div class="member-img">
+                <img src="{% static 'img/team/team-1.jpg' %}" class="img-fluid" alt="José Ramírez">
+                <div class="social">
+                  <a href="https://twitter.com/jose_ramirez" target="_blank"><i class="bi bi-twitter"></i></a>
+                  <a href="https://facebook.com/jose.ramirez" target="_blank"><i class="bi bi-facebook"></i></a>
+                  <a href="https://instagram.com/jose_ramirez" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://linkedin.com/in/jose-ramirez" target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>José Ramírez</h4>
+                <span>Gerente de Servicio</span>
+                <p>Especialista en diagnósticos avanzados y reparaciones complejas.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Miembro 3: Juan Martínez -->
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="zoom-in" data-aos-delay="200">
+              <div class="member-img">
+                <img src="{% static 'img/team/team-1.jpg' %}" class="img-fluid" alt="Juan Martínez">
+                <div class="social">
+                  <a href="https://twitter.com/juan_martinez" target="_blank"><i class="bi bi-twitter"></i></a>
+                  <a href="https://facebook.com/juan.martinez" target="_blank"><i the bi-facebook"></i></a>
+                  <a href="https://instagram.com/juan_martinez" target="_blank"><i class="bi bi-instagram"></i></a>
+                  <a href="https://linkedin.com/in/juan-martinez" target="_blank"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Juan Martínez</h4>
+                <span>Técnico Especializado</span>
+                <p>Dedicado a ofrecer la mejor atención y resultados óptimos en cada servicio.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Fin Seccion Team/Equipo -->
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section-bg">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Promociones Online</h2>
+          <p>Oportunidad Única. Aprovecha alguna de nuestras promociones online.</p>
+        </div>
+        <div class="row" id="promotions-container">
+          <!-- Los bloques de promociones se generan aquí dinámicamente -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Seccion Preguntas Frecuentes ======= -->
+    <section id="faq" class="faq">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Preguntas Frecuentes</h2>
+        </div>
+
+        <ul class="faq-list">
+
+          <li data-aos="fade-up">
+            <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#faq1">¿Cuál es la frecuencia recomendada para cambiar el aceite del motor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+            <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                La mayoría de los fabricantes de automóviles recomiendan cambiar el aceite cada 5,000 a 7,500 kilómetros, pero esto puede variar según el modelo y el tipo de conducción. Consulta el manual del propietario de tu vehículo para obtener recomendaciones específicas.
+              </p>
+            </div>
+          </li>
+
+          <li data-aos="fade-up" data-aos-delay="100">
+            <a data-bs-toggle="collapse" data-bs-target="#faq2" class="collapsed">¿Por qué es importante alinear y balancear las ruedas de mi automóvil? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+            <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                La alineación y el balanceo ayudan a garantizar un desgaste uniforme de los neumáticos, una conducción suave y segura, y una mejor economía de combustible al garantizar que las ruedas estén correctamente alineadas y equilibradas.
+              </p>
+            </div>
+          </li>
+
+          <li data-aos="fade-up" data-aos-delay="200">
+            <a data-bs-toggle="collapse" data-bs-target="#faq3" class="collapsed">¿Cómo puedo saber si mis frenos necesitan ser reemplazados? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+            <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                sonidos metálicos al frenar, un pedal de freno esponjoso o que se hunde más de lo habitual, y una distancia de frenado más larga de lo normal.
+              </p>
+            </div>
+          </li>
+
+          <li data-aos="fade-up" data-aos-delay="300">
+            <a data-bs-toggle="collapse" data-bs-target="#faq4" class="collapsed">¿Cuándo debo realizar un servicio de mantenimiento preventivo en mi vehículo? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+            <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Se recomienda realizar un servicio de mantenimiento preventivo cada 12 meses o cada 15,000 kilómetros, lo que ocurra primero. Este servicio incluye cambios de aceite, inspecciones de fluidos, verificación de la batería, entre otros.
+              </p>
+            </div>
+          </li>
+
+          <li data-aos="fade-up" data-aos-delay="400">
+            <a data-bs-toggle="collapse" data-bs-target="#faq5" class="collapsed">¿Puedo conducir mi automóvil si se enciende la luz de "Check Engine"? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+            <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Si la luz de "Check Engine" se enciende, se recomienda llevar tu vehículo a un taller mecánico para realizar un diagnóstico adecuado. Conducir con esta luz encendida podría empeorar el problema y dañar componentes críticos del motor.
+              </p>
+            </div>
+          </li>
+
+          <li data-aos="fade-up" data-aos-delay="500">
+            <a data-bs-toggle="collapse" data-bs-target="#faq6" class="collapsed">¿Qué debo hacer si mi vehículo se sobrecalienta mientras conduzco? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+            <div id="faq6" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Si tu vehículo comienza a sobrecalentarse, es importante detenerte de inmediato en un lugar seguro. Apaga el motor y deja que se enfríe antes de intentar abrir el radiador o agregar líquido refrigerante. 
+                Es recomendable llamar a una grúa o servicio de remolque si no estás seguro de cómo proceder.
+              </p>
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+    </section><!-- Fin Seccion Preguntas Frecuentes -->
+
+    <!-- ======= Inicio Seccion Contacto ======= -->
+    <section id="contact" class="contact section-bg">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contacto</h2>
+          <p>Se esfuerza mucho en aprovechar las consecuencias de algo que en realidad se le escapa.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="info d-flex flex-column justify-content-center" data-aos="fade-right">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Locacion:</h4>
+                <p>Vicuña Mackena 4917<br>San Joaquin, RM.</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>contacto@trm.cl</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+569 666 666 66</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+            <form id="contact-form" action="#" method="post" role="form" class="contact-form" data-aos="fade-left">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" id="message" rows="5" placeholder="Mensaje" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Cargando</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Tu mensaje fue enviado, ¡Muchas Gracias!</div>
+              </div>
+              <div class="text-center"><button type="submit">Enviar Mensaje</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Fin Seccion Contacto -->
+
+     <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <a href="#header" class="scrollto footer-logo"><img src="{% static 'img/trm.png' %}" alt=""></a>
+            <p>Y cualquiera que huya de ellos, nada son. Con un gran esfuerzo físico, elegir un vuelo suele ser lo más cómodo.</p>
+          </div>
+        </div>
+        <div class="row footer-newsletter justify-content-center">
+          <div class="col-lg-6">
+            <form action="" method="post">
+              <input type="email" name="email" placeholder="Ingresa tu email"><input type="submit" value="Suscribete">
+            </form>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>TRM</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- Fin Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+</html>

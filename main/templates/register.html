@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Register</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Knight
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  ======================================================== -->
+  <style>
+    .register-form {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 50px; /* Ajuste del margen inferior para agregar más espacio en blanco debajo de la caja de registro */
+    }
+
+    .register-form h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .register-form input[type="text"],
+    .register-form input[type="email"],
+    .register-form input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    .register-form button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #7cc576;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .register-form button[type="submit"]:hover {
+        background-color: #61b959;
+    }
+</style>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <a href="{% url 'index' %}"><img src="{% static 'img/logo2.png' %}" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#about">Nosotros</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#services">Servicios</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#team">Equipo</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#pricing">Promociones</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#contact">Contacto</a></li>
+          <li><a class="nav-link scrollto active" href="{% url 'login' %}">Login</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main" data-aos="fade-up">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <ol>
+            <li><a href="{% url 'index' %}">Volver al Home</a></li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ===== REGISTER ===== -->
+    <div class="register-form">
+        <h2>Registro</h2>
+        <form id="registerForm" method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+            <input type="text" name="first_name" id="first_name" placeholder="Nombre" required>
+            <input type="text" name="last_name" id="last_name" placeholder="Apellido" required>
+            <input type="email" name="email" id="email" placeholder="Correo electrónico" required>
+            <input type="password" name="password1" id="password1" placeholder="Contraseña" required>
+            <input type="password" name="password2" id="password2" placeholder="Confirmar Contraseña" required>
+            <button type="submit">Registrar</button>
+        </form>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="{% if message.tags %}{{ message.tags }}-message{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        <p>¿Ya tienes una cuenta? <a href="{% url 'login' %}">Inicia sesión aquí</a></p>
+    </div>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+
+      <div class="container">
+
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <a href="#header" class="scrollto footer-logo"><img src="{% static 'img/trm.png' %}" alt=""></a>
+            <p>Y cualquiera que huya de ellos, nada son. Con un gran esfuerzo físico, elegir un vuelo suele ser lo más cómodo.</p>
+          </div>
+        </div>
+
+        <div class="row footer-newsletter justify-content-center">
+          <div class="col-lg-6">
+            <form action="" method="post">
+              <input type="email" name="email" placeholder="Ingresa tu email"><input type="submit" value="Suscribete">
+            </form>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>TRM</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <!-- Eliminar la referencia a validate.js si no lo usas -->
+  <!-- <script src="{% static 'vendor/php-email-form/validate.js' %}"></script> -->
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+</html>
