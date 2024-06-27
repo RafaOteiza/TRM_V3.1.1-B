@@ -11,4 +11,6 @@ urlpatterns = [
     path('alineacion/', views.alineacion, name='alineacion'),
     path('frenos/', views.frenos, name='frenos'),
     path('motor/', views.motor, name='motor'),
+    path('add_to_cart/<int:promotion_id>/', views.add_to_cart, name='add_to_cart'),
+    path('profile/', views.profile, name='profile'),
 ]
