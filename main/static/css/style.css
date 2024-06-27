@@ -1816,3 +1816,14 @@ section {
 .register-form button[type="submit"]:hover {
   background-color: #61b959;
 }
+
+
+.cart-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}

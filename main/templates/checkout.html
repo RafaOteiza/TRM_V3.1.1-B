@@ -61,63 +61,27 @@
     </header><!-- Fin Header -->
 
     <main id="main" data-aos="fade-up">
-
-        <!-- ======= Breadcrumbs ======= -->
-        <section id="breadcrumbs" class="breadcrumbs">
+        <section id="checkout" class="checkout">
             <div class="container">
-                <div class="d-flex justify-content-between align-items-center">
-                    <ol>
-                        <li><a href="{% url 'index' %}">Home</a></li>
-                        <li>Perfil</li>
-                    </ol>
+                <div class="section-title">
+                    <h2>Procesar Pago</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <form method="post">
+                            {% csrf_token %}
+                            <h3>Resumen del Carrito</h3>
+                            <ul>
+                                {% for promotion in cart.promotions.all %}
+                                    <li>{{ promotion.title }} - ${{ promotion.price }}</li>
+                                {% endfor %}
+                            </ul>
+                            <button type="submit" class="btn btn-success">Confirmar y Pagar</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </section><!-- Fin Breadcrumbs -->
-
-        <!-- Perfil Section -->
-        <section id="profile" class="profile">
-          <div class="container">
-              <div class="section-title">
-                  <h2>Perfil del Usuario</h2>
-                  <p>Bienvenido, {{ user.first_name }} {{ user.last_name }}</p>
-              </div>
-              <div class="row">
-                  <div class="col-lg-8 offset-lg-2">
-                      <div class="profile-info">
-                          <h3>Información Personal</h3>
-                          <ul>
-                              <li><strong>Nombre:</strong> {{ user.first_name }}</li>
-                              <li><strong>Apellido:</strong> {{ user.last_name }}</li>
-                              <li><strong>Email:</strong> {{ user.username }}</li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-              <div class="section-title">
-                  <h2>Carrito de Compras</h2>
-              </div>
-              {% if cart.promotions.all %}
-                  <div class="row">
-                      {% for promotion in cart.promotions.all %}
-                          <div class="col-lg-4 col-md-6 mb-3">
-                              <div class="box cart-item" data-aos="zoom-in" data-aos-delay="100">
-                                  <h3>{{ promotion.title }}</h3>
-                                  <p>{{ promotion.description|linebreaksbr }}</p>
-                                  <p><strong>Precio: ${{ promotion.price }}</strong></p>
-                                  <div class="cart-buttons">
-                                      <a href="{% url 'remove_from_cart' promotion.id %}" class="btn btn-danger">Eliminar</a>
-                                      <a href="{% url 'checkout' %}" class="btn btn-success">Pagar</a>
-                                  </div>
-                              </div>
-                          </div>
-                      {% endfor %}
-                  </div>
-              {% else %}
-                  <p>No tienes promociones en tu carrito.</p>
-              {% endif %}
-          </div>
-              </section><!-- Fin Perfil Section -->
-
+        </section>
     </main><!-- Fin #main -->
 
     <!-- ======= Footer ======= -->

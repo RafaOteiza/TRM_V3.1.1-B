@@ -71,3 +71,14 @@ def remove_from_cart(request, promotion_id):
     cart.promotions.remove(promotion)
     cart.save()
     return redirect('profile')
+
+@login_required
+def checkout(request):
+    cart = request.user.cart
+    if request.method == 'POST':
+        # Aquí puedes añadir la lógica de procesamiento de pago
+        # Si el pago es exitoso, vaciar el carrito
+        cart.promotions.clear()
+        cart.save()
+        return redirect('profile')
+    return render(request, 'checkout.html', {'cart': cart})
