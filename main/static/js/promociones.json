@@ -1,33 +1,35 @@
 [
-    {
+  {
+      "id": 1,
       "titulo": "Cambio de Aceite y Filtro",
-      "precio": "49.990",
+      "precio": 49990,
       "descripcion": [
-        "Cambio de aceite sintético 5W-30.",
-        "Reemplazo del filtro de aceite.",
-        "Inspección de niveles de fluidos adicionales",
-        "Lubricación de partes móviles"
+          "Cambio de aceite sintético 5W-30.",
+          "Reemplazo del filtro de aceite.",
+          "Inspección de niveles de fluidos adicionales",
+          "Lubricación de partes móviles"
       ]
-    },
-    {
+  },
+  {
+      "id": 2,
       "titulo": "Especial en Frenos",
-      "precio": "39.990",
+      "precio": 39990,
       "descripcion": [
-        "Inspección visual de pastillas y discos de freno.",
-        "Reemplazo de pastillas de freno gastadas.",
-        "Rectificación de discos de freno si es necesario.",
-        "Ajuste del freno de estacionamiento"
+          "Inspección visual de pastillas y discos de freno.",
+          "Reemplazo de pastillas de freno gastadas.",
+          "Rectificación de discos de freno si es necesario.",
+          "Ajuste del freno de estacionamiento."
       ]
-    },
-    {
+  },
+  {
+      "id": 3,
       "titulo": "Alineación y Balanceo",
-      "precio": "29.990",
+      "precio": 29990,
       "descripcion": [
-        "Alineación de las ruedas delanteras y traseras.",
-        "Balanceo de cada una de las llantas.",
-        "Inspección de la suspensión y la dirección.",
-        "Ajuste de la presión de los neumáticos."
+          "Alineación de las ruedas delanteras y traseras.",
+          "Balanceo de cada una de las llantas.",
+          "Inspección de la suspensión y la dirección.",
+          "Ajuste de la presión de los neumáticos."
       ]
-    }
-  ]
-  
+  }
+]
