@@ -1,8 +1,10 @@
 # main/views.py
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from .models import Promotion, Cart
 
 def index(request):
     return render(request, 'index.html')
@@ -50,3 +52,15 @@ def frenos(request):
 
 def motor(request):
     return render(request, 'motor.html')
+
+@login_required
+def add_to_cart(request, promotion_id):
+    promotion = get_object_or_404(Promotion, id=promotion_id)
+    cart, created = Cart.objects.get_or_create(user=request.user)
+    cart.promotions.add(promotion)
+    return redirect('profile')
+
+@login_required
+def profile(request):
+    cart, created = Cart.objects.get_or_create(user=request.user)
+    return render(request, 'profile.html', {'cart': cart})
