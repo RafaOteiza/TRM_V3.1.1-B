@@ -64,3 +64,10 @@ def add_to_cart(request, promotion_id):
 def profile(request):
     cart, created = Cart.objects.get_or_create(user=request.user)
     return render(request, 'profile.html', {'cart': cart})
+
+def remove_from_cart(request, promotion_id):
+    cart = request.user.cart
+    promotion = get_object_or_404(Promotion, id=promotion_id)
+    cart.promotions.remove(promotion)
+    cart.save()
+    return redirect('profile')

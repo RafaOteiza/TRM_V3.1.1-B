@@ -13,4 +13,5 @@ urlpatterns = [
     path('motor/', views.motor, name='motor'),
     path('add_to_cart/<int:promotion_id>/', views.add_to_cart, name='add_to_cart'),
     path('profile/', views.profile, name='profile'),
+    path('remove_from_cart/<int:promotion_id>/', views.remove_from_cart, name='remove_from_cart'),
 ]

@@ -261,27 +261,24 @@
         const container = document.getElementById('promotions-container');
         container.innerHTML = ''; // Limpiar contenido existente
         promotions.forEach(promo => {
-            if (promo.id !== undefined) {
-                const htmlContent = `
-                    <div class="col-lg-4 col-md-6 mb-3">
-                        <div class="box" data-aos="zoom-in" data-aos-delay="100">
-                            <h3>${promo.titulo}</h3>
-                            <h4><sup>$</sup>${promo.precio}</h4>
-                            <ul>
-                                ${promo.descripcion.map(line => `<li>${line}</li>`).join('')}
-                            </ul>
-                            <div class="btn-wrap">
-                                <a href="/add_to_cart/${promo.id}/" class="btn-buy">Comprar</a>
-                            </div>
+            const htmlContent = `
+                <div class="col-lg-4 col-md-6 mb-3">
+                    <div class="box" data-aos="zoom-in" data-aos-delay="100">
+                        <h3>${promo.titulo}</h3>
+                        <h4><sup>$</sup>${promo.precio}</h4>
+                        <ul>
+                            ${promo.descripcion.map(line => `<li>${line}</li>`).join('')}
+                        </ul>
+                        <div class="btn-wrap">
+                            <a href="/add_to_cart/${promo.id}/" class="btn-buy">Comprar</a>
                         </div>
-                    </div>`;
-                container.innerHTML += htmlContent;
-            } else {
-                console.error('Promotion ID is undefined:', promo);
-            }
+                    </div>
+                </div>`;
+            container.innerHTML += htmlContent;
         });
     }
 });
+
 
 
   /**
