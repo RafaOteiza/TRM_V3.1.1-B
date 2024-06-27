@@ -77,6 +77,14 @@
         <!-- Perfil Section -->
         <section id="profile" class="profile">
           <div class="container">
+                <!-- Mensajes de éxito -->
+                {% if messages %}
+                    <div class="alert alert-success" role="alert">
+                        {% for message in messages %}
+                            {{ message }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
               <div class="section-title">
                   <h2>Perfil del Usuario</h2>
                   <p>Bienvenido, {{ user.first_name }} {{ user.last_name }}</p>
@@ -97,26 +105,26 @@
                   <h2>Carrito de Compras</h2>
               </div>
               {% if cart.promotions.all %}
-                  <div class="row">
-                      {% for promotion in cart.promotions.all %}
-                          <div class="col-lg-4 col-md-6 mb-3">
-                              <div class="box cart-item" data-aos="zoom-in" data-aos-delay="100">
-                                  <h3>{{ promotion.title }}</h3>
-                                  <p>{{ promotion.description|linebreaksbr }}</p>
-                                  <p><strong>Precio: ${{ promotion.price }}</strong></p>
-                                  <div class="cart-buttons">
-                                      <a href="{% url 'remove_from_cart' promotion.id %}" class="btn btn-danger">Eliminar</a>
-                                      <a href="{% url 'checkout' %}" class="btn btn-success">Pagar</a>
-                                  </div>
-                              </div>
-                          </div>
-                      {% endfor %}
-                  </div>
-              {% else %}
-                  <p>No tienes promociones en tu carrito.</p>
-              {% endif %}
-          </div>
-              </section><!-- Fin Perfil Section -->
+              <div class="row">
+                {% for promotion in cart.promotions.all %}
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="box cart-item" data-aos="zoom-in" data-aos-delay="100">
+                            <h3>{{ promotion.title }}</h3>
+                            <p>{{ promotion.description|linebreaksbr }}</p>
+                            <p><strong>Precio: ${{ promotion.price }}</strong></p>
+                            <div class="cart-buttons">
+                                <a href="{% url 'remove_from_cart' promotion.id %}" class="btn btn-danger">Eliminar</a>
+                                <a href="{% url 'checkout' %}" class="btn btn-success">Pagar</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No tienes promociones en tu carrito.</p>
+        {% endif %}
+    </div>
+</section><!-- Fin Perfil Section -->
 
     </main><!-- Fin #main -->
 

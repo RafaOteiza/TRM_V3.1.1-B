@@ -80,5 +80,6 @@ def checkout(request):
         # Si el pago es exitoso, vaciar el carrito
         cart.promotions.clear()
         cart.save()
+        messages.success(request, 'Gracias por su compra.')
         return redirect('profile')
     return render(request, 'checkout.html', {'cart': cart})
